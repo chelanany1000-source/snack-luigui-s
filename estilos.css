@@ -1,0 +1,299 @@
+/* --- 1. CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    height: 100vh;
+}
+
+/* --- 2. ESTILOS DE LA PANTALLA 1: INICIO DE SESIÓN (index.html) --- */
+body.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-login {
+    display: flex;
+    width: 800px;
+    height: 480px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.lado-izquierdo {
+    flex: 1;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo-burguer {
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+
+.lado-izquierdo h1 {
+    font-size: 32px;
+    color: #ff6b00;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.slogan {
+    font-style: italic;
+    color: #cccccc;
+    margin-top: 5px;
+}
+
+.lado-derecho {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lado-derecho h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 25px;
+}
+
+.grupo-campo {
+    margin-bottom: 15px;
+}
+
+.grupo-campo label {
+    display: block;
+    font-size: 13px;
+    color: #555555;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.grupo-campo input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.grupo-campo input:focus {
+    border-color: #ff6b00;
+}
+
+.btn-ingresar {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6b00;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.btn-ingresar:hover {
+    background-color: #e05d00;
+}
+
+/* --- 3. BARRA DE NAVEGACIÓN SUPERIOR (Para ventas y control) --- */
+.barra-navegacion {
+    background-color: #1e1e2d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.links-menu a {
+    color: #a2a3b7;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.links-menu a.activo, .links-menu a:hover {
+    color: #ff6b00;
+}
+
+.links-menu a.link-salir {
+    color: #ff5b5b;
+}
+
+/* --- 4. ESTILOS DE LA PANTALLA DE REGISTRAR VENTA (ventas.html) --- */
+.contenedor-ventas {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+}
+
+.seccion-productos {
+    flex: 2;
+}
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.tarjeta-producto {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.tarjeta-producto .precio {
+    color: #ff6b00;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.btn-agregar {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.seccion-pedido {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.lista-pedido {
+    margin: 20px 0;
+    border-top: 1px solid #eee;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.item-pedido {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.total-caja {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.monto-total {
+    color: #ff6b00;
+}
+
+.btn-cobrar {
+    width: 100%;
+    background: #ff6b00;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- 5. ESTILOS DE LA PANTALLA DE CONTROL E INVENTARIO (control.html) --- */
+.contenedor-control {
+    padding: 30px;
+}
+
+.resumen-rapido {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.caja-resumen {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.caja-resumen span {
+    color: #666;
+    font-size: 14px;
+}
+
+.caja-resumen h3 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.tabla-inventario {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.tabla-inventario th, .tabla-inventario td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-inventario th {
+    background: #f8f9fa;
+    color: #333;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge.disponible { background: #d4edda; color: #155724; }
+.badge.poco-stock { background: #f8d7da; color: #721c24; }

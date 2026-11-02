@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack Luigi - Control e Inventario</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Barra de navegación superior -->
+    <header class="barra-navegacion">
+        <div class="logo">🍔 <strong>Snack Luigi</strong></div>
+        <nav class="links-menu">
+            <a href="ventas.html">🛒 Registrar Venta</a>
+            <a href="control.html" class="activo">📊 Control e Inventario</a>
+            <a href="index.html" class="link-salir">🚪 Salir</a>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenedor-control">
+
+        <!-- Botones superiores para guardar stock y reiniciar caja -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <button type="button" onclick="guardarStockPersonalizado()" style="background-color: #28a745; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px;">
+                💾 Guardar Cambios de Stock
+            </button>
+            <button type="button" class="btn-reiniciar-caja" onclick="reiniciarCaja()">
+                🔄 Reiniciar Caja del Día
+            </button>
+        </div>
+
+        <!-- Resumen rápido del negocio -->
+        <section class="resumen-rapido">
+            <div class="caja-resumen">
+                <span>Ventas Totales del Día</span>
+                <h3 id="total-dia">Bs. 0.00</h3>
+            </div>
+            <div class="caja-resumen">
+                <span>Ventas Registradas</span>
+                <h3 id="unidades-dia">0 ventas</h3>
+            </div>
+        </section>
+
+        <!-- Tabla de Control de Inventario Completa y Editable -->
+        <section class="seccion-tabla">
+            <h2>Control de Inventario y Stock</h2>
+            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">💡 El stock baja automáticamente al vender, pero puedes modificarlo manualmente y presionar "Guardar Cambios de Stock".</p>
+            <table class="tabla-inventario">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio (Bs.)</th>
+                        <th>Stock Actual</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hamburguesa simple</td>
+                        <td>Bs. 15.00</td>
+                        <td><input type="number" class="input-stock" value="25" data-id="0" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hamburguesa tradicional</td>
+                        <td>Bs. 17.00</td>
+                        <td><input type="number" class="input-stock" value="20" data-id="1" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hamburguesa con queso</td>
+                        <td>Bs. 21.00</td>
+                        <td><input type="number" class="input-stock" value="15" data-id="2" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hamburguesa con doble queso</td>
+                        <td>Bs. 23.00</td>
+                        <td><input type="number" class="input-stock" value="12" data-id="3" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hamburguesa italiana</td>
+                        <td>Bs. 26.00</td>
+                        <td><input type="number" class="input-stock" value="10" data-id="4" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hamburguesa clasica</td>
+                        <td>Bs. 26.00</td>
+                        <td><input type="number" class="input-stock" value="10" data-id="5" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hamburguesa super clasica</td>
+                        <td>Bs. 34.00</td>
+                        <td><input type="number" class="input-stock" value="8" data-id="6" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hamburguesa luigi</td>
+                        <td>Bs. 26.00</td>
+                        <td><input type="number" class="input-stock" value="12" data-id="7" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hamburguesa super luigi</td>
+                        <td>Bs. 34.00</td>
+                        <td><input type="number" class="input-stock" value="8" data-id="8" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hamburguesa canadience</td>
+                        <td>Bs. 29.00</td>
+                        <td><input type="number" class="input-stock" value="10" data-id="9" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Salchipapa</td>
+                        <td>Bs. 18.00</td>
+                        <td><input type="number" class="input-stock" value="18" data-id="10" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>Salchipollo</td>
+                        <td>Bs. 32.00</td>
+                        <td><input type="number" class="input-stock" value="10" data-id="11" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>5 uni. alitas + 1 salsa</td>
+                        <td>Bs. 25.00</td>
+                        <td><input type="number" class="input-stock" value="15" data-id="12" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>8 uni. alitas + 2 salsas</td>
+                        <td>Bs. 37.00</td>
+                        <td><input type="number" class="input-stock" value="4" data-id="13" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge poco-stock">Stock Bajo</span></td>
+                    </tr>
+                    <tr>
+                        <td>12 uni. alitas + 2 salsas</td>
+                        <td>Bs. 55.00</td>
+                        <td><input type="number" class="input-stock" value="6" data-id="14" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>18 uni. alitas + 3 salsas</td>
+                        <td>Bs. 81.00</td>
+                        <td><input type="number" class="input-stock" value="5" data-id="15" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge disponible">Disponible</span></td>
+                    </tr>
+                    <tr>
+                        <td>24 uni. alitas + 4 salsas</td>
+                        <td>Bs. 106.00</td>
+                        <td><input type="number" class="input-stock" value="3" data-id="16" oninput="actualizarEstadoFila(this)"></td>
+                        <td class="celda-estado"><span class="badge poco-stock">Stock Bajo</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- Script con la lógica para sincronizar stock automático -->
+    <script>
+        // Cargar stock guardado y actualizar estados visuales al abrir la página
+        window.addEventListener('DOMContentLoaded', () => {
+            let stockGuardado = JSON.parse(localStorage.getItem('stockSnackLuigi'));
+            if (stockGuardado) {
+                const inputs = document.querySelectorAll('.input-stock');
+                inputs.forEach(input => {
+                    let id = input.getAttribute('data-id');
+                    if (stockGuardado[id] !== undefined) {
+                        input.value = stockGuardado[id];
+                        actualizarEstadoFila(input); // Ajusta el estado rojo/verde según el valor
+                    }
+                });
+            }
+
+            // Cargar resumen de ventas del día
+            let totalGuardado = localStorage.getItem('totalDia') || "0.00";
+            let unidadesGuardadas = localStorage.getItem('unidadesDia') || "0";
+            document.getElementById('total-dia').textContent = `Bs. ${totalGuardado}`;
+            document.getElementById('unidades-dia').textContent = `${unidadesGuardadas} ventas`;
+        });
+
+        // Función auxiliar para cambiar dinámicamente el badge de estado según la cantidad
+        function actualizarEstadoFila(input) {
+            let valor = parseInt(input.value) || 0;
+            let celdaEstado = input.closest('tr').querySelector('.celda-estado');
+            
+            if (valor <= 4) {
+                celdaEstado.innerHTML = '<span class="badge poco-stock">Stock Bajo</span>';
+            } else {
+                celdaEstado.innerHTML = '<span class="badge disponible">Disponible</span>';
+            }
+        }
+
+        // Función para guardar los cambios manuales de stock
+        function guardarStockPersonalizado() {
+            let stockActualizado = {};
+            const inputs = document.querySelectorAll('.input-stock');
+            
+            inputs.forEach(input => {
+                let id = input.getAttribute('data-id');
+                stockActualizado[id] = parseInt(input.value) || 0;
+            });
+
+            localStorage.setItem('stockSnackLuigi', JSON.stringify(stockActualizado));
+            alert("✅ ¡Stock actualizado y guardado correctamente en el sistema!");
+        }
+    </script>
+
+    <!-- Vinculamos tu archivo script.js habitual -->
+    <script src="script.js"></script>
+
+</body>
+</html>

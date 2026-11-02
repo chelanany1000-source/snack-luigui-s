@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack Luigi - Registrar Venta</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Navegación superior -->
+    <header class="barra-navegacion">
+        <div class="logo">🍔 <strong>Snack Luigi</strong></div>
+        <nav class="links-menu">
+            <a href="ventas.html" class="activo">🛒 Registrar Venta</a>
+            <a href="control.html">📊 Control e Inventario</a>
+            <a href="index.html" class="link-salir">🚪 Salir</a>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenedor-ventas">
+
+        <!-- Lado Izquierdo: Catálogo de Productos -->
+        <section class="seccion-productos">
+            <h2>Seleccionar Productos</h2>
+            
+            <div class="grilla-productos">
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa simple</h3>
+                    <p class="precio">Bs. 15.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa simple', 15)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa tradicional</h3>
+                    <p class="precio">Bs. 17.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa tradicional', 17)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa con queso</h3>
+                    <p class="precio">Bs. 21.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa con queso', 21)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa con doble queso</h3>
+                    <p class="precio">Bs. 23.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa con doble queso', 23)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa italiana</h3>
+                    <p class="precio">Bs. 26.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa italiana', 26)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa clasica</h3>
+                    <p class="precio">Bs. 26.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa clasica', 26)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa super clasica</h3>
+                    <p class="precio">Bs. 34.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa super clasica', 34)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa luigi</h3>
+                    <p class="precio">Bs. 26.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa luigi', 26)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa super luigi</h3>
+                    <p class="precio">Bs. 34.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa super luigi', 34)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Hamburguesa canadience</h3>
+                    <p class="precio">Bs. 29.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Hamburguesa canadience', 29)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Salchipapa</h3>
+                    <p class="precio">Bs. 18.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Salchipapa', 18)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>Salchipollo</h3>
+                    <p class="precio">Bs. 32.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('Salchipollo', 32)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>5 uni. alitas + 1 salsa</h3>
+                    <p class="precio">Bs. 25.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('5 uni. alitas + 1 salsa', 25)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>8 uni. alitas + 2 salsas</h3>
+                    <p class="precio">Bs. 37.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('8 uni. alitas + 2 salsas', 37)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>12 uni. alitas + 2 salsas</h3>
+                    <p class="precio">Bs. 55.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('12 uni. alitas + 2 salsas', 55)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>18 uni. alitas + 3 salsas</h3>
+                    <p class="precio">Bs. 81.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('18 uni. alitas + 3 salsas', 81)">+ Agregar</button>
+                </div>
+
+                <div class="tarjeta-producto">
+                    <h3>24 uni. alitas + 4 salsas</h3>
+                    <p class="precio">Bs. 106.00</p>
+                    <button type="button" class="btn-agregar" onclick="agregarAlPedido('24 uni. alitas + 4 salsas', 106)">+ Agregar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lado Derecho: Calculadora del Pedido -->
+        <section class="seccion-pedido">
+            <h2>Mi Pedido</h2>
+
+            <div class="lista-pedido" id="lista-pedido">
+                <p id="sin-productos" style="color: #888; font-size: 14px;">No hay productos agregados.</p>
+            </div>
+
+            <div class="total-caja">
+                <span>Total a Cobrar:</span>
+                <span class="monto-total" id="monto-total">Bs. 0.00</span>
+            </div>
+
+            <button type="button" class="btn-cobrar" onclick="confirmarVenta()">✅ Confirmar Venta</button>
+        </section>
+
+    </main>
+
+    <!-- Vinculamos el archivo de JavaScript externo -->
+    <script src="script.js"></script>
+
+</body>
+</html>
